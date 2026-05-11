@@ -1,0 +1,19 @@
+.menu-container {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+.menu-tab {
+  padding: 8px 16px;
+  border: none;
+  background: #1976d2;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.menu-tab.active {
+  background: #0d47a1;
+}

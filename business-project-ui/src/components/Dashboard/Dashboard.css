@@ -1,0 +1,249 @@
+/* ========================================
+   DASHBOARD — Premium Design
+   ======================================== */
+
+.dashboard-page {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Hero Section ---- */
+.dashboard-hero {
+  position: relative;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  border-radius: 20px;
+  padding: 48px 40px;
+  margin-bottom: 36px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 24px rgba(15, 23, 42, 0.18),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.hero-highlight {
+  background: linear-gradient(135deg, #667eea, #4facfe, #43e97b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 560px;
+  font-weight: 400;
+}
+
+/* Hero floating circles */
+.hero-decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  pointer-events: none;
+}
+
+.hero-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.08;
+}
+
+.hero-circle-1 {
+  width: 200px;
+  height: 200px;
+  background: #667eea;
+  top: -40px;
+  right: -30px;
+  animation: floatCircle 8s ease-in-out infinite;
+}
+
+.hero-circle-2 {
+  width: 120px;
+  height: 120px;
+  background: #4facfe;
+  bottom: -20px;
+  right: 100px;
+  animation: floatCircle 6s ease-in-out infinite reverse;
+}
+
+.hero-circle-3 {
+  width: 80px;
+  height: 80px;
+  background: #43e97b;
+  top: 30px;
+  right: 180px;
+  animation: floatCircle 10s ease-in-out infinite;
+}
+
+@keyframes floatCircle {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(10px, -15px) scale(1.05); }
+  66% { transform: translate(-8px, 10px) scale(0.95); }
+}
+
+/* ---- Section Header ---- */
+.dashboard-section {
+  margin-bottom: 24px;
+}
+
+.section-header {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.3px;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ---- Dashboard Grid ---- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+/* ---- Card ---- */
+.dashboard-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  animation: cardSlideIn 0.5s ease-out backwards;
+  animation-delay: var(--card-delay, 0s);
+  position: relative;
+}
+
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: transparent;
+}
+
+.card-gradient-bar {
+  height: 4px;
+  width: 100%;
+}
+
+.card-content {
+  padding: 24px 24px 20px;
+}
+
+.card-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover .card-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.card-icon {
+  font-size: 22px;
+}
+
+.card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.2px;
+}
+
+.card-description {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0 0 20px 0;
+  line-height: 1.55;
+  min-height: 42px;
+}
+
+.card-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.card-action-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #94a3b8;
+  transition: color 0.25s ease;
+}
+
+.card-action-arrow {
+  font-size: 11px;
+  color: #94a3b8;
+  transition: all 0.25s ease;
+}
+
+.dashboard-card:hover .card-action-text {
+  color: #3b82f6;
+}
+
+.dashboard-card:hover .card-action-arrow {
+  color: #3b82f6;
+  transform: translateX(4px);
+}
